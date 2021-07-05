@@ -13,6 +13,8 @@
     #bluetooth.enable = true;
   };
 
+  services.hardware.bolt.enable = true;
+
   services.upower.enable = true;
 
   # No acidental shutdowns.
