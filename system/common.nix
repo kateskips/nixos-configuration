@@ -67,6 +67,7 @@
   #   enableSSHSupport = true;
   #   pinentryFlavor = "gnome3";
   # };
+  programs.ssh.startAgent = true;
 
   # List services that you want to enable:
 
@@ -98,13 +99,12 @@
   programs.fish.enable = true;
   programs.zsh.enable = true;
 
-  programs.ssh.startAgent = true;
-
   # Users
   users.defaultUserShell = "/var/run/current-system/sw/bin/fish";
   users.mutableUsers = false;
   users.users.root = {
-    hashedPassword = null;
+    #hashedPassword = null;
+    hashedPassword = config.users.users.klgfollett.hashedPassword;
   };
   users.users.klgfollett = {
     uid = 1000;

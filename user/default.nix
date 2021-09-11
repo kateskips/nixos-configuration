@@ -11,6 +11,8 @@
     ./nixpkgs
     ./nvim
     ./misc-dev.nix
+    ./secrets.nix
+    ./aws.nix
   ];
 
   systemd.user.startServices = true;

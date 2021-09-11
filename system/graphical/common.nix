@@ -13,6 +13,11 @@
     #bluetooth.enable = true;
   };
 
+  hardware = {
+    #bluetooth.enable = true;
+    opengl.enable = true;
+  };
+
   services.hardware.bolt.enable = true;
 
   services.upower.enable = true;

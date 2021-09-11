@@ -6,7 +6,6 @@
     #gimpPlugins.resynthesizer
 
     #hexchat
-    thunderbird
 
     #musescore
 
@@ -27,9 +26,6 @@
     unzip
     unrar
 
-    element-desktop
-    signal-desktop
-
     haskellPackages.nix-diff
 
     pavucontrol
@@ -38,15 +34,10 @@
     # firefox done below
     chromium
 
-    signal-desktop
-
     # Bits of Gnome
     # gnome3.gnome_terminal
     gnome3.bijiben
     evince
-
-    # Desktop Env
-    dmenu
   ];
 
   programs.alacritty = {
@@ -59,15 +50,4 @@
 
   programs.firefox.enable = true;
 
-  # services.redshift = {
-  #   enable = true;
-  #   provider = "manual";
-  #   #provider = "geoclue2";
-  #   # South of New York, for less seasonal variation
-  #   latitude = "27";
-  #   longitude = "-74.0060";
-  #   #longitude = "-122.4194"; # San Francisco
-  #   temperature.night = 1500;
-  #   #extraOptions = [ "-m randr" ];
-  # };
 }
