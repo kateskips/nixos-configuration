@@ -30,10 +30,6 @@
 
     pavucontrol
 
-    # browser
-    # firefox done below
-    chromium
-
     # Bits of Gnome
     # gnome3.gnome_terminal
     gnome3.bijiben
