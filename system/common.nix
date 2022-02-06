@@ -65,7 +65,6 @@
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
-  #   pinentryFlavor = "gnome3";
   # };
   programs.ssh.startAgent = true;
 
@@ -117,7 +116,7 @@
   };
 
   services.ipfs = {
-    package = pkgs.ipfs_latest;
+    #package = pkgs.ipfs_latest;
     enable = true;
   };
   networking.firewall.allowedTCPPorts = [ 4001 ];
