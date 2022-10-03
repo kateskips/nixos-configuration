@@ -57,7 +57,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time.timeZone = "Asia/Manila";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
