@@ -9,6 +9,9 @@
     ./packages.nix
   ];
 
+  # Faster, nicer input for LUKS
+  boot.initrd.systemd.enable = true;
+
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
 
@@ -41,7 +44,7 @@
   fonts = {
     #enableFontDir = true;
     #enableGhostscriptFonts = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       corefonts  # Micrsoft free fonts
       inconsolata  # monospaced
       ubuntu_font_family  # Ubuntu fonts
@@ -73,9 +76,11 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    forwardX11 = true;
-    permitRootLogin = "no";
-    passwordAuthentication = false;
+    settings = {
+      X11Forwarding = true;
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
   };
 
   # Open ports in the firewall.
@@ -109,15 +114,21 @@
     uid = 1000;
     createHome = true;
     description = "Kate Lois Galagate Follett";
-    extraGroups = [ "klgfollett" "networkmanager" "wheel" ];
+    extraGroups = [
+      "klgfollett"
+      "networkmanager"
+      "wheel"
+      config.services.kubo.group
+    ];
     isSystemUser = false;
     isNormalUser = true;
     useDefaultShell = true;
   };
 
-  services.ipfs = {
-    #package = pkgs.ipfs_latest;
+  services.kubo = {
+    #package = pkgs.kubo_latest;
     enable = true;
+    settings.Addresses.API = ["/ip4/127.0.0.1/tcp/5001"];
   };
   networking.firewall.allowedTCPPorts = [ 4001 ];
   networking.firewall.allowedUDPPorts = [ 4001 ];

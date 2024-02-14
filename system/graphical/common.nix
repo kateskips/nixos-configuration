@@ -14,7 +14,7 @@
   };
 
   hardware = {
-    #bluetooth.enable = true;
+    bluetooth.enable = true;
     opengl.enable = true;
   };
 

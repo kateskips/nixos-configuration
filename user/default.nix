@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -7,6 +7,7 @@
     ./fish
     ./git
     ./haskell.nix
+    ./helix
     ./home-manager.nix
     ./nixpkgs
     ./nvim
@@ -17,4 +18,7 @@
   ];
 
   systemd.user.startServices = true;
+
+  home.username = "jcericson";
+  home.homeDirectory = "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}";
 }
