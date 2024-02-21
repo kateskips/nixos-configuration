@@ -18,11 +18,7 @@
     };
   };
 
-  home.pointerCursor = {
-    name = "Vanilla-DMZ";
-    package = pkgs.vanilla-dmz;
-    x11.enable = true;
-  };
+  home.pointerCursor.x11.enable = true;
 
   #services.taffybar.enable = true;
   xdg.configFile."taffybar/taffybar.hs".source = ./taffybar.hs;
