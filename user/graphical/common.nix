@@ -30,6 +30,8 @@
 
     pavucontrol
 
+    zoom-us
+
     # Bits of Gnome
     # gnome3.gnome_terminal
     gnome.gnome-notes
