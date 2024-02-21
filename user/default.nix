@@ -19,6 +19,6 @@
 
   systemd.user.startServices = true;
 
-  home.username = "jcericson";
+  home.username = "klgfollett";
   home.homeDirectory = "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}";
 }
