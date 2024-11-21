@@ -23,6 +23,13 @@
   #services.taffybar.enable = true;
   xdg.configFile."taffybar/taffybar.hs".source = ./taffybar.hs;
 
+  # Let GNOME update the time zone automatically.
+  dconf.settings = {
+    "org/gnome/desktop/datetime" = {
+      automatic-timezone = true;
+    };
+  };
+
   xresources.properties = {
     # A nice desktop size
     #"*.dpi" = 120;

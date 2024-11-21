@@ -59,8 +59,8 @@
     ];
   };
 
-  # Set your time zone.
-  time.timeZone = "Asia/Manila";
+  # Time zone can change based on travel.
+  time.timeZone = null;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
