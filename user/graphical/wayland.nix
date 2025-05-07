@@ -10,7 +10,7 @@
     wrapperFeatures.gtk = true; # so that gtk works properly
     config = {
       terminal = "alacritty";
-      menu     = "bemenu-run";
+      menu     = "sirula";
 
       up       = "i";
       down     = "k";
@@ -61,37 +61,26 @@
     systemd.enable = true;
   };
 
-  programs.firefox.package = pkgs.firefox-wayland;
+  xdg.configFile."sirula/config.toml".source = (pkgs.formats.toml {}).generate "sirula-config" {
+    # Switch to left side
+    anchor_left = true;
+    anchor_right = false;
+  };
 
-  home.packages = let
-    forceWayland = t: e: f: pkgs.stdenv.mkDerivation {
-       pname = t.pname or t.name + "-force-wayland";
-       inherit (t) version;
-       unpackPhase = "true";
-       doBuild = false;
-       nativeBuildInputs = [ pkgs.buildPackages.makeWrapper ];
-       installPhase = ''
-         mkdir -p $out/bin
-         ln -s "${lib.getBin t}/bin/${e}" "$out/bin"
-       '';
-       postFixup = ''
-         for e in $out/bin/*; do
-           wrapProgram $e ${f}
-         done
-       '';
-    };
-  in with pkgs; [
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
+
+  home.packages = with pkgs; [
     #swaylock
     #iswayidle
     wl-clipboard
     mako # notification daemon
     alacritty # Alacritty is the default terminal in the config
     wofi
-    bemenu
-    (forceWayland thunderbird "thunderbird" "--set-default MOZ_ENABLE_WAYLAND 1")
-    (forceWayland chromium "chromium" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
-    (forceWayland signal-desktop "signal-desktop" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
-    (forceWayland element-desktop "element-desktop" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
+    sirula # Launcher
+    niri # Considering using instead of Sway
   ];
 
   services.gammastep = import ./redshift.nix;

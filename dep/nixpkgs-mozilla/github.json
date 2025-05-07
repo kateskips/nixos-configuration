@@ -1,0 +1,8 @@
+{
+  "owner": "mozilla",
+  "repo": "nixpkgs-mozilla",
+  "branch": "master",
+  "private": false,
+  "rev": "e35b0e071cae97469d80222be988fdd972b22c3b",
+  "sha256": "0akciq7jbn3z6zg7czj0bcxsb27snljm3w3kpdyhl90qf9xvmdi3"
+}

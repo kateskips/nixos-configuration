@@ -14,7 +14,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     # from the nixos-hardware repo
-    <nixos-hardware/dell/xps/15-9500/nvidia>
+    (import ../../dep/nixos-hardware/thunk.nix + "/dell/xps/15-9500/nvidia")
   ];
 
   # Use the systemd-boot EFI boot loader.

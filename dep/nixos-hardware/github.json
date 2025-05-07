@@ -1,0 +1,8 @@
+{
+  "owner": "NixOS",
+  "repo": "nixos-hardware",
+  "branch": "master",
+  "private": false,
+  "rev": "de6fc5551121c59c01e2a3d45b277a6d05077bc4",
+  "sha256": "0yi5jb00zrlads7p00cp9cg74bxa6x1006wqcl6n2bhj6h6b3xvg"
+}

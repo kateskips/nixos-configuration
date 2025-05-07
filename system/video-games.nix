@@ -4,6 +4,6 @@
 {
   programs.steam.enable = true;
 
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
   hardware.pulseaudio.support32Bit = true;
 }

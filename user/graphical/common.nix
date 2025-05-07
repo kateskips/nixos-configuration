@@ -11,6 +11,8 @@
 
     vscode
 
+    libreoffice
+    dbeaver-bin
     meld
 
     qemu
@@ -26,6 +28,14 @@
     unzip
     unrar
 
+    chromium
+
+    thunderbird
+
+    element-desktop
+    signal-desktop
+    telegram-desktop
+
     haskellPackages.nix-diff
 
     pavucontrol
@@ -36,6 +46,8 @@
     # gnome3.gnome_terminal
     gnome.gnome-notes
     evince
+
+    zoom-us
   ];
 
   home.pointerCursor = {
@@ -45,10 +57,10 @@
 
   programs.alacritty = {
     enable = true;
-    settings = {
-      scrollback.multiplier = -1;
-      scrollback.faux_multiplier = -1;
-    };
+  };
+
+  home.sessionVariables = {
+    TERMINAL = "alacritty";
   };
 
   programs.firefox.enable = true;
