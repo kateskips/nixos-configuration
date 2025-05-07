@@ -48,6 +48,7 @@
     evince
 
     zoom-us
+    slack
   ];
 
   home.pointerCursor = {
